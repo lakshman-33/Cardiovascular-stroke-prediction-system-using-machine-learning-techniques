@@ -1,0 +1,74 @@
+{% extends 'userbase.html'%}
+{%block contents%}
+
+ <section id="intro">
+
+    <div class="intro-text">
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <p><h2>Data View</h2></p>
+      <table class="table table-bordered footer_title bg-light text-dark">
+  <thead>
+    <tr>
+        <th>ids</th>
+        <th>gender</th> 
+        <th>hypertension</th>
+        <th>heart_disease</th>
+        <th>ever_married</th>
+        <th>work_type</th>
+        <th>Residence_type</th>
+        <th>avg_glucose_level </th>
+        <th>bmi </th>
+        <th>smoking_status </th>
+        <th>stroke </th> 
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in users %}
+      <tr>
+         
+                                                <td>{{i.ids}}</td>
+                                                <td>{{i.gender}}</td>
+          
+                                                <td>{{i.hypertension}}</td>
+                                                <td>{{i.heart_disease}}</td>
+                                                <td>{{i.ever_married}}</td>
+                                                <td>{{i.work_type}}</td>
+                                                <td>{{i.Residence_type}}</td>
+                                                <td>{{i.avg_glucose_level}}</td>
+                                                <td>{{i.bmi}}</td>
+                                                <td>{{i.smoking_status}}</td>
+                                                <td>{{i.stroke}}</td> 
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% if users.has_other_pages %}
+  <ul class="pagination">
+    {% if users.has_previous %}
+      <li><a href="?page={{ users.previous_page_number }}">&laquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&laquo;</span></li>
+    {% endif %}
+    {% for i in users.paginator.page_range %}
+      {% if users.number == i %}
+        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+      {% else %}
+        <li><a href="?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if users.has_next %}
+      <li><a href="?page={{ users.next_page_number }}">&raquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&raquo;</span></li>
+    {% endif %}
+  </ul>
+{% endif %}
+
+</p>
+
+
+</center>
+    </div>
+  </section>
+{%endblock%}

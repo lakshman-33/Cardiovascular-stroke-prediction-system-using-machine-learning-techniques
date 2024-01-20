@@ -1,0 +1,50 @@
+{% extends 'userbase.html'%}
+{%block contents%}
+
+ <section id="intro">
+
+    <div class="intro-text">
+<br><br><br><br><br><br><br><br><br><br><br><br>
+      <p><h2>Add Data</h2></p>
+       <form method="POST" action="{%url 'UserAddData'%}" >
+                {% csrf_token %}
+                <table>
+        
+       
+       
+       
+       
+       
+       
+       
+     
+    stroke   
+                    <tr><td>Ids(ids)</td><td>{{form.ids}}</td><td>patient Id </td> </tr>
+                    <tr><td>gender(gender)</td><td>{{form.gender}}</td><td> 0=Female;  1= Male; 2=Other</td></tr>
+                    <tr><td>Age(age)</td><td>{{form.age}}</td><td>Age In Years </td> </tr>
+                    <tr><td>hypertension</td><td>{{form.hypertension}}</td><td> 0-No,1- Yes </td></tr>
+                    <tr><td>heart_disease</td><td>{{form.heart_disease}}</td><td>0-No,1- Yes  </td></tr>
+                    <tr><td>ever_married</td><td>{{form.ever_married}}</td><td>0-No,1- Yes  </td></tr>
+                    <tr><td>work_type</td><td>{{form.work_type}}</td><td>children-0, Govt_job-1, Never_worked-2, Private-3,Self-employed-4 </td></tr>
+                    <tr><td>Residence_type</td><td>{{form.Residence_type}}</td><td>Rural  -0, Urban  -1</td></tr>
+                    <tr><td>avg_glucose_level</td><td>{{form.avg_glucose_level}}</td><td>avg glucose level </td></tr>
+                    <tr><td>bmi</td><td>{{form.bmi}}</td><td>bmi</td></tr>
+                    <tr><td>smoking_status </td><td>{{form.smoking_status}}</td><td>formerly smoked -0, never smoked  -1, smokes  -2, Unk0wn  -3</td></tr>
+                    <tr><td>stroke</td><td>{{form.stroke}}</td><td> 0-No,1- Yes  </td></tr>
+                       
+
+
+                    <tr><td><button  class="btn btn-outline-success my-2 my-sm-0" type="submit" style = "margin-left:20%;">Add Data</button></td></tr>
+
+                        {% if messages %}
+                               {% for message in messages %}
+                                  <font color='GREEN'> {{ message }}</font>
+                               {% endfor %}
+                           {% endif %}
+
+                </table>
+
+            </form>  </p><a class="nav-link" href=""></a>
+    </div>
+  </section>
+{%endblock%}

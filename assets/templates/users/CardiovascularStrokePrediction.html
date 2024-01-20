@@ -1,0 +1,27 @@
+{% extends 'userbase.html'%}
+{%block contents%}
+
+ <section id="intro">
+
+    <div class="intro-text">
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+         
+
+
+  <h2><a href = '/'> <p style="text-align:center;">Cardiovascular Stroke  Prediction</p></a></h2>
+   
+  <h2>Results:</h2>
+ 
+  {% if prediction == 1%}
+  <h2 style="color:red;">Sorry to say, chances of having Cardiovascular Stroke disease is more, please consult a Doctor.</h2>
+<p style="text-align:center;"><img src="https://resize.indiatvnews.com/en/resize/newbucket/730_-/2019/01/heart-attack-healthy-tips-1546853480.jpg" alt="HTML" width="450" height="350"></p>
+ 
+  {% elif prediction == 0%}
+  <h2 style="color:blue;">No Worries!!! You don't have Cardiovascular Stroke disease.</h2>
+   <p style="text-align:center;"></p><img src="https://www.becomingminimalist.com/wp-content/uploads/2019/09/how-to-be-happy.jpg" alt="HTML" width="350" height="250"></p>
+  
+  
+  {% endif %}
+    </div>
+  </section>
+{%endblock%}

@@ -1,0 +1,31 @@
+{% extends 'userbase.html'%}
+{%block contents%}
+
+ <section id="intro">
+
+    <div class="intro-text">
+<br><br><br><br><br><br><br><br><br><br><br><br>
+      <h2><a href = '/'> <p style="text-align:center;">Cardiovascular Stroke Prediction</p></a></h2>
+       <div class="center">
+  <form action="{%url 'CardiovascularStrokePrediction'%}"method="post">
+                {% csrf_token %}
+
+ <table>
+                    <tr><td>
+
+  <tr><td> <input type="text" name="chestpain" placeholder="cpain type(ex.0,1,2,3)" required="required" /></td> </tr>
+   <tr><td> <input type="text" name="bloodpressure" placeholder="resting blood pressure" required="required" /> </td> </tr>
+  <tr><td><input type="text" name="serumcholestoral" placeholder="serum cholestoral in mg/dl" required="required" /></td> </tr>
+  <tr><td><input type="text" name="fastingbloodsugar" placeholder="fasting blood sugar > 120 mg/dl" required="required" />  </td> </tr>
+ <tr><td> <input type="text" name="electrocardiographic" placeholder="resting electrocardiographic results (values 0,1,2)" required="required" /></td> </tr>
+  <tr><td>  <input type="text" name="maximumheartrate" placeholder="maximum heart rate achieved" required="required" /></td> </tr>
+  <tr><td>  <input type="text" name="exerciseinducedangina" placeholder="exercise induced angina" required="required" /></td> </tr>
+  <tr><td>  <button type="submit" class="registerbtn">Predict</button> </td> </tr> </table>
+</form>
+</div>
+ 
+
+            </p><a class="nav-link" href=""></a>
+    </div>
+  </section>
+{%endblock%}
